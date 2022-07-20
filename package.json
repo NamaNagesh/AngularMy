@@ -2,7 +2,7 @@
   "name": "my-angular",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+    "ng": "ng g c dataProducts",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -16,10 +16,11 @@
     "@angular/compiler": "^14.0.0",
     "@angular/core": "^14.0.0",
     "@angular/forms": "^14.0.0",
+    "@angular/material": "^14.0.2",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "angular-material": "^1.2.5",
+    "web-animations-js": "2.3.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
