@@ -2,7 +2,7 @@
   "name": "my-angular",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng g c header",
+    "ng": "ng g c breadcrumb",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",

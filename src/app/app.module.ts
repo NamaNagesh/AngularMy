@@ -12,13 +12,15 @@ import { ProductsTemplatesComponent } from './products-templates/products-templa
 import { DataProductsComponent } from './data-products/data-products.component';
 import {MatTableModule} from '@angular/material/table';
 import { HeaderComponent } from './header/header.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsTemplatesComponent,
     DataProductsComponent,
-    HeaderComponent
+    HeaderComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
