@@ -11,12 +11,14 @@ import {MatDividerModule} from '@angular/material/divider';
 import { ProductsTemplatesComponent } from './products-templates/products-templates.component';
 import { DataProductsComponent } from './data-products/data-products.component';
 import {MatTableModule} from '@angular/material/table';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsTemplatesComponent,
-    DataProductsComponent
+    DataProductsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

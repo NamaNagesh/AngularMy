@@ -1,5 +1,5 @@
-<div class="container">
-<mat-card class="card">
+<!-- <div class="container"> -->
+<!-- <mat-card class="card">
     <mat-card-header>
       <mat-card-title>
         <mat-grid-list cols="12" rowHeight="20px">
@@ -66,5 +66,42 @@
         </div>
     </mat-card-content>
     
-  </mat-card>
-</div>
+  </mat-card> -->
+
+  <div class="table-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+  
+
+
+      <ng-container matColumnDef="productName">
+        <mat-header-cell *matHeaderCellDef>Data Product Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.productName}} </mat-cell>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="sproductTemplate">
+        <mat-header-cell *matHeaderCellDef> Source Product Template </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.sproductTemplate}} </mat-cell>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="lastVersionStatus">
+        <mat-header-cell *matHeaderCellDef> Last Version Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastVersionStatus}} </mat-cell>
+      </ng-container>
+  
+  
+      <ng-container matColumnDef="versions">
+        <mat-header-cell *matHeaderCellDef> Versions </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.versions}} </mat-cell>
+      </ng-container>
+  
+   
+
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+
+<!-- </div> -->

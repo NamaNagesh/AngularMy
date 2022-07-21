@@ -2,7 +2,7 @@
   "name": "my-angular",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng g c dataProducts",
+    "ng": "ng g c header",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
