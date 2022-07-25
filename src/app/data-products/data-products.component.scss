@@ -1,11 +1,26 @@
 .table-container {
     display: flex;
-    margin-top: 40px;
+
     margin-left: 30px;
     margin-right: 30px;
     flex-direction: column;
     max-height: 500px;
     min-width: 300px;
+  }
+
+  .formField{
+    width: 100%;
+  }
+
+  .topContent{
+    display: inline-flex;
+    margin-top: 40px;
+    width: 100%;
+  }
+  .addButton{
+    width: 50%;
+    margin-top: 15px;
+    float: right;
   }
   
   .mat-table {
@@ -13,6 +28,14 @@
     max-height: 500px;
   }
 
+  .mat-raised-button{
+   
+   float: right;
+  }
+  .search{
+    margin-left: 40px;
+    width: 40%;
+  }
   .mat-header-row{
     background-color: black;
     color: white !important;

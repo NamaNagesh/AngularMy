@@ -13,6 +13,9 @@ import { DataProductsComponent } from './data-products/data-products.component';
 import {MatTableModule} from '@angular/material/table';
 import { HeaderComponent } from './header/header.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import {MatSortModule} from '@angular/material/sort';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    MatButtonModule,
     MatTabsModule,
+    MatInputModule,
     MatCardModule,
     MatGridListModule,
     MatDividerModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
