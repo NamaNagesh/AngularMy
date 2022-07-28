@@ -16,6 +16,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import {MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatGridListModule,
     MatDividerModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

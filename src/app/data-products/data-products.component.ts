@@ -1,6 +1,9 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource} from '@angular/material/table';
-import {MatSort} from '@angular/material/sort'
+import {MatSort} from '@angular/material/sort';
+import {MatPaginator} from '@angular/material/paginator';
+
+
 
 
 @Component({
@@ -11,6 +14,7 @@ import {MatSort} from '@angular/material/sort'
 export class DataProductsComponent implements OnInit {
 
   @ViewChild('matSort') sort:MatSort= new MatSort();
+  @ViewChild('paginator') paginator!: MatPaginator;
   displayedColumns = ['productName', 'sproductTemplate', 'lastVersionStatus', 'versions','lastUpdate','updatedBy','releases','lastRelease'];
   ELEMENT_DATA: ElementObj[] = [
     {productName:'Product Data 0', sproductTemplate: 'Basic Flow', lastVersionStatus: 'valid', versions: '7 versions',lastUpdate:'32 minutes ago',updatedBy:'John Christen',releases:'2 Releases',lastRelease:'2 months ago'},
@@ -22,9 +26,11 @@ export class DataProductsComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
   
   ngOnInit(): void {
+    this.dataSource.paginator = this.paginator;
   }
 
   applyFilter(event: Event) {
