@@ -71,6 +71,11 @@
 
   <div style="display:inline-flex">
   <div class="table-container mat-elevation-z8">
+    <div class="search">
+      <mat-form-field  class="formField" appearance="standard">
+       <input matInput (keyup)="applyFilter($event)" variant="out-lined" placeholder="Search" #input>
+     </mat-form-field>
+     </div>
     <mat-table #table [dataSource]="dataSource"  matSort #matSort="matSort">
   
 
@@ -111,6 +116,11 @@
   </div>
 
   <div class="table-container mat-elevation-z8">
+    <div class="search">
+      <mat-form-field  class="formField" appearance="standard">
+       <input matInput (keyup)="applyFilter1($event)" variant="out-lined" placeholder="Search" #input>
+     </mat-form-field>
+     </div>
     <mat-table #table [dataSource]="dataSource1"  matSort #matSort1="matSort">
   
 

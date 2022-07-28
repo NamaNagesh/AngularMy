@@ -27,6 +27,15 @@ export class ProductsTemplatesComponent implements OnInit {
   dataSource=new MatTableDataSource(this.ELEMENT_DATA);
   dataSource1=new MatTableDataSource(this.ELEMENT_DATA);
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  applyFilter1(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource1.filter = filterValue.trim().toLowerCase();
+  }
+
   constructor() { }
   
   ngAfterViewInit() {
