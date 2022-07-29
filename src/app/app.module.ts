@@ -17,6 +17,10 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AddProductDialogComponent } from './add-product-dialog/add-product-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+//import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +28,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ProductsTemplatesComponent,
     DataProductsComponent,
     HeaderComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    AddProductDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    FormsModule,
     MatButtonModule,
     MatTabsModule,
     MatInputModule,
@@ -38,7 +44,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDividerModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

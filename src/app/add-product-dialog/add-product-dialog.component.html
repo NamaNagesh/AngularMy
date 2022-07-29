@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Add Product Data</h1>
+<div mat-dialog-content>
+    <div class="dialogContent">
+  <mat-form-field class="formField" appearance="standard">
+    <input matInput [(ngModel)]="name" maxlength="20" placeholder="Data Product Template Name">
+  </mat-form-field> 
+  <br/><br/>
+  <mat-form-field class="formField" maxlength="50" appearance="standard">
+    <input matInput [(ngModel)]="description" placeholder="Data Product Template Description">
+  </mat-form-field> 
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button (click)="okClick('ok')" cdkFocusInitial>Ok</button>
+</div>

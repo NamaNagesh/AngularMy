@@ -2,6 +2,8 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
+import { AddProductDialogComponent } from '../add-product-dialog/add-product-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 
 
@@ -12,6 +14,8 @@ import {MatPaginator} from '@angular/material/paginator';
   styleUrls: ['./data-products.component.scss']
 })
 export class DataProductsComponent implements OnInit {
+
+  constructor(public dialog: MatDialog) {}
 
   @ViewChild('matSort') sort:MatSort= new MatSort();
   @ViewChild('paginator') paginator!: MatPaginator;
@@ -37,6 +41,20 @@ export class DataProductsComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 }
+
+openDialog(): void {
+  let dialogRef = this.dialog.open(AddProductDialogComponent, {
+    width: '600px',
+    data: {  }
+  });
+
+  dialogRef.afterClosed().subscribe((result:any) => {
+    if(result)
+    console.log(result);
+    
+  });
+}
+
 
 }
 
