@@ -19,10 +19,10 @@ export class DataProductsComponent implements OnInit {
 
   @ViewChild('matSort') sort:MatSort= new MatSort();
   @ViewChild('paginator') paginator!: MatPaginator;
-  displayedColumns = ['productName', 'sproductTemplate', 'lastVersionStatus', 'versions','lastUpdate','updatedBy','releases','lastRelease'];
+  displayedColumns = ['productName', 'sproductTemplate', 'lastVersionStatus', 'versions','lastUpdate','updatedBy','releases','lastRelease','actions'];
   ELEMENT_DATA: ElementObj[] = [
-    {productName:'Product Data 0', sproductTemplate: 'Basic Flow', lastVersionStatus: 'valid', versions: '7 versions',lastUpdate:'32 minutes ago',updatedBy:'John Christen',releases:'2 Releases',lastRelease:'2 months ago'},
-    {productName:'Product Data 1', sproductTemplate: 'Basic Flow', lastVersionStatus: 'invalid', versions: '8 versions',lastUpdate:'32 minutes ago',updatedBy:'John Christen',releases:'2 Releases',lastRelease:'2 months ago'},
+    {productName:'Product Data 0', sproductTemplate: 'Basic Flow', lastVersionStatus: 'valid', versions: '7 versions',lastUpdate:'32 minutes ago',updatedBy:'John Christen',releases:'2 Releases',lastRelease:'2 months ago',actions:''},
+    {productName:'Product Data 1', sproductTemplate: 'Basic Flow', lastVersionStatus: 'invalid', versions: '8 versions',lastUpdate:'32 minutes ago',updatedBy:'John Christen',releases:'2 Releases',lastRelease:'2 months ago',actions:''},
   ];
  
   dataSource=new MatTableDataSource(this.ELEMENT_DATA);
@@ -67,4 +67,5 @@ export interface ElementObj {
   updatedBy: string;
   releases: string;
   lastRelease: string;
+  actions:string
 }

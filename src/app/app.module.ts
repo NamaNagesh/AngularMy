@@ -22,6 +22,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 //import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AboutDialogComponent } from './about-dialog/about-dialog.component';
+import {MatIconModule} from '@angular/material/icon';
+import {CdkMenuModule} from '@angular/cdk/menu';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { AboutDialogComponent } from './about-dialog/about-dialog.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule,
+    CdkMenuModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -23,10 +23,10 @@ export class ProductsTemplatesComponent implements OnInit {
   @ViewChild('matSort1') sort1:MatSort= new MatSort();
   @ViewChild('paginator1') paginator1!: MatPaginator;
 
-  displayedColumns = ['productName', 'sproductTemplate', 'lastVersionStatus', 'versions'];
+  displayedColumns = ['productName', 'sproductTemplate', 'lastVersionStatus', 'versions','actions'];
   ELEMENT_DATA : ElementObj[] = [
-    {productName:'Product Data 0', sproductTemplate: 'Basic Flow', lastVersionStatus: 'valid', versions: '7 versions'},
-    {productName:'Product Data 1', sproductTemplate: 'Basic Flow', lastVersionStatus: 'invalid', versions: '8 versions'},
+    {productName:'Product Data 0', sproductTemplate: 'Basic Flow', lastVersionStatus: 'valid', versions: '7 versions',actions:''},
+    {productName:'Product Data 1', sproductTemplate: 'Basic Flow', lastVersionStatus: 'invalid', versions: '8 versions',actions:''},
   ];
 
   dataSource=new MatTableDataSource(this.ELEMENT_DATA);
@@ -76,5 +76,6 @@ export interface ElementObj {
   sproductTemplate: string;
   lastVersionStatus: string;
   versions: string;
+  actions:string;
 
 }

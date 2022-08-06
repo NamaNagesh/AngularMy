@@ -3,6 +3,16 @@
 <span class="breadItem">/</span>
 <span class="breadItem">Business Unit: My BU</span>
 <div class="addButton">
-<button mat-raised-button color="primary" (click)="openDialog()"> About</button>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>help_outline</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>perm_device_information</mat-icon>
+          <button mat-raised-button color="primary" (click)="openDialog()"> About</button>
+        </button>
+       
+      </mat-menu>
+<!-- <button mat-raised-button color="primary" (click)="openDialog()"> About</button> -->
 </div>
 </div>
