@@ -21,6 +21,7 @@ import { AddProductDialogComponent } from './add-product-dialog/add-product-dial
 import {MatDialogModule} from '@angular/material/dialog';
 //import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AboutDialogComponent } from './about-dialog/about-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     DataProductsComponent,
     HeaderComponent,
     BreadcrumbComponent,
-    AddProductDialogComponent
+    AddProductDialogComponent,
+    AboutDialogComponent
   ],
   imports: [
     BrowserModule,
