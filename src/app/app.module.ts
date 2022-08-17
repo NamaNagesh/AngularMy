@@ -28,6 +28,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { ProductTemplateDetailsComponent } from './product-template-details/product-template-details.component';
 import { HomeComponent } from './home/home.component';
 import { ProductDataDetailsComponent } from './product-data-details/product-data-details.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { ProductDataDetailsComponent } from './product-data-details/product-data
     MatDialogModule,
     MatIconModule,
     CdkMenuModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

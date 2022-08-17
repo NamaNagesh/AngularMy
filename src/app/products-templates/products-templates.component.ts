@@ -4,6 +4,8 @@ import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import { AddProductDialogComponent } from '../add-product-dialog/add-product-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 
 
 
@@ -15,7 +17,7 @@ import {MatDialog} from '@angular/material/dialog';
 export class ProductsTemplatesComponent implements OnInit {
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private http: HttpClient) {}
 
   @ViewChild('matSort') sort:MatSort= new MatSort();
   @ViewChild('paginator') paginator!: MatPaginator;
@@ -23,14 +25,43 @@ export class ProductsTemplatesComponent implements OnInit {
   @ViewChild('matSort1') sort1:MatSort= new MatSort();
   @ViewChild('paginator1') paginator1!: MatPaginator;
 
-  displayedColumns = ['productName', 'sproductTemplate', 'lastVersionStatus', 'versions','actions'];
-  ELEMENT_DATA : ElementObj[] = [
-    {productName:'Product Data 0', sproductTemplate: 'Basic Flow', lastVersionStatus: 'valid', versions: '7 versions',actions:''},
-    {productName:'Product Data 1', sproductTemplate: 'Basic Flow', lastVersionStatus: 'invalid', versions: '8 versions',actions:''},
+  displayedColumns = ['templateId', 'templateDescription', 'status', 'lastModifiedBy','lastModifiedDate','actions'];
+  ELEMENT_DATA : any[] = [
+    {templateId:'Product Data 0', templateDescription: 'Basic Flow', status: 'valid', lastModifiedBy: '7 versions',"lastModifiedDate":"",actions:''},
+    {templateId:'Product Data 0', templateDescription: 'Basic Flow', status: 'valid', lastModifiedBy: '7 versions',"lastModifiedDate":"",actions:''},
   ];
 
-  dataSource=new MatTableDataSource(this.ELEMENT_DATA);
-  dataSource1=new MatTableDataSource(this.ELEMENT_DATA);
+  DISPLAY_DATA:any[]=[];
+
+  MOCK_RES:any={
+    "templates":[
+      {
+        "templateId":"template1",
+        "templateDescription":"list of dataProductTemplates",
+        "status":"valid",
+        "lastModifiedBy":"axdsf",
+        "lastModifiedDate":"2022-08-05T02:44:56.483+00:00",
+        "uuid":"dddddddddddddddddddddddddddddddddd",
+        "action":""
+      },
+      {
+        "templateId":"template2",
+        "templateDescription":"list of dataProductTemplates21",
+        "status":"Invalid",
+        "lastModifiedBy":"axdsw",
+        "lastModifiedDate":"2022-08-05T02:44:56.483+00:00",
+        "uuid":"ccccccccccccccccccc",
+        "action":""
+      }
+    ],
+    "pagination" : {
+      "offset":0,
+      "limit":0,
+      "total":0
+    }
+  }
+  dataSource=new MatTableDataSource(this.DISPLAY_DATA);
+  //dataSource1=new MatTableDataSource(this.ELEMENT_DATA);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -38,7 +69,7 @@ export class ProductsTemplatesComponent implements OnInit {
   }
   applyFilter1(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource1.filter = filterValue.trim().toLowerCase();
+   // this.dataSource1.filter = filterValue.trim().toLowerCase();
   }
 
   openDialog(): void {
@@ -50,7 +81,7 @@ export class ProductsTemplatesComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result:any) => {
       if(result)
       console.log(result);
-      
+     
     });
   }
   
@@ -61,21 +92,33 @@ export class ProductsTemplatesComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
 
-    this.dataSource1.sort = this.sort1;
-    this.dataSource1.paginator = this.paginator1;
+   // this.dataSource1.sort = this.sort1;
+    //this.dataSource1.paginator = this.paginator1;
   }
   
   ngOnInit(): void {
-    this.dataSource.paginator = this.paginator;
+    this.http.get("http://localhost:8444/configuration-service/api/data-templates").subscribe((res:any)=>{
+      this.dataSource=new MatTableDataSource(this.DISPLAY_DATA);
+    },
+    (error:any)=>{
+      console.log("error");
+      // add mock data
+      this.DISPLAY_DATA=this.MOCK_RES["templates"];
+      console.log(this.DISPLAY_DATA);
+      this.dataSource=new MatTableDataSource(this.DISPLAY_DATA);
+      this.dataSource.paginator = this.paginator;
+    }
+    )
+   
   }
 
 }
 
-export interface ElementObj {
-  productName: string;
-  sproductTemplate: string;
-  lastVersionStatus: string;
-  versions: string;
-  actions:string;
+// export interface ElementObj {
+//   productName: string;
+//   sproductTemplate: string;
+//   lastVersionStatus: string;
+//   versions: string;
+//   actions:string;
 
-}
+// }

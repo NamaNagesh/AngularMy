@@ -96,33 +96,38 @@
   
 
 
-      <ng-container matColumnDef="productName">
+      <ng-container matColumnDef="templateId">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Data Product Template Name </mat-header-cell>
         <mat-cell *matCellDef="let element">
            <!-- <a href="/templateDetail">{{element.productName}}</a> -->
 
-           <a routerLink="/templateDetail" routerLinkActive="active" ariaCurrentWhenActive="page">{{element.productName}}</a>
+           <a routerLink="/templateDetail" routerLinkActive="active" ariaCurrentWhenActive="page">{{element.templateId}}</a>
            </mat-cell>
       </ng-container>
   
      
-      <ng-container matColumnDef="sproductTemplate">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.sproductTemplate}} </mat-cell>
+      <ng-container matColumnDef="templateDescription">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.templateDescription}} </mat-cell>
       </ng-container>
   
 
-      <ng-container matColumnDef="lastVersionStatus">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Last Update </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.lastVersionStatus}} </mat-cell>
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
       </ng-container>
   
+      <ng-container matColumnDef="lastModifiedDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Last Update</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastModifiedDate | date}} </mat-cell>
+      </ng-container>
   
-      <ng-container matColumnDef="versions">
+      <ng-container matColumnDef="lastModifiedBy">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Updated By </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.versions}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastModifiedBy}} </mat-cell>
       </ng-container>
   
+      
    
       <ng-container matColumnDef="actions">
         
