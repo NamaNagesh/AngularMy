@@ -106,6 +106,7 @@ export class ProductsTemplatesComponent implements OnInit {
       this.DISPLAY_DATA=this.MOCK_RES["templates"];
       console.log(this.DISPLAY_DATA);
       this.dataSource=new MatTableDataSource(this.DISPLAY_DATA);
+      this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     }
     )

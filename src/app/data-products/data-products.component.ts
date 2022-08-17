@@ -82,6 +82,7 @@ export class DataProductsComponent implements OnInit {
       this.DISPLAY_DATA=this.MOCK_RES["dataProducts"];
       console.log(this.DISPLAY_DATA);
       this.dataSource=new MatTableDataSource(this.DISPLAY_DATA);
+      this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     }
     )
