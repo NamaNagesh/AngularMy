@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input} from '@angular/core';
 import { AboutDialogComponent } from '../about-dialog/about-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 
@@ -12,7 +12,17 @@ export class BreadcrumbComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {}
 
+  @Input()
+  templateId:any;
+
+  page:any;
+
   ngOnInit(): void {
+    if(window.location.href.includes("templateDetail")){
+      this.page="templateDetail"
+    }else if(window.location.href.includes("dataDetails")){
+      this.page="dataDetails"
+    }
   }
 
   openDialog(): void {

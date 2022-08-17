@@ -1,7 +1,13 @@
 <div class="breadCard">
-<p class="breadItem" >Data Product Studio Home</p>
-<!-- <span class="breadItem">/</span>
-<span class="breadItem">Business Unit: My BU</span> -->
+<p *ngIf="!templateId" class="breadItem" >Data Product Studio Home</p>
+<div *ngIf="templateId">
+  <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Data Product Studio Home</a>
+ <span class="breadItem">/</span>
+ <span *ngIf="page=='templateDetail'" class="breadItem">Data product Template: {{templateId}}</span>
+ <span *ngIf="page=='dataDetails'" class="breadItem">Data product : {{templateId}}</span>
+</div>
+
+
 <div class="addButton">
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>help_outline</mat-icon>

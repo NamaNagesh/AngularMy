@@ -6,9 +6,9 @@ import { ProductTemplateDetailsComponent } from './product-template-details/prod
 
 
 const routes: Routes =  [
-  { path: 'templateDetail', component: ProductTemplateDetailsComponent },
+  { path: 'templateDetail/:id', component: ProductTemplateDetailsComponent },
   { path: '', component: HomeComponent },
-  { path: 'dataDetails', component: ProductDataDetailsComponent }
+  { path: 'dataDetails/:id', component: ProductDataDetailsComponent }
 ];
 
 @NgModule({
