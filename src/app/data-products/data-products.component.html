@@ -16,52 +16,52 @@
   
 
 
-      <ng-container matColumnDef="productName">
+      <ng-container matColumnDef="dataProductName">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Data Product Name </mat-header-cell>
         <mat-cell *matCellDef="let element">
           <!-- <a href="#">{{element.productName}}</a>  -->
-          <a routerLink="dataDetails/{{element.productName}}" routerLinkActive="active" ariaCurrentWhenActive="page">{{element.productName}}</a>
+          <a routerLink="dataDetails/{{element.dataProductName}}" routerLinkActive="active" ariaCurrentWhenActive="page">{{element.dataProductName}}</a>
         </mat-cell>
       </ng-container>
   
      
-      <ng-container matColumnDef="sproductTemplate">
+      <ng-container matColumnDef="templateName">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Source Product Template </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.sproductTemplate}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.templateName}} </mat-cell>
       </ng-container>
   
 
-      <ng-container matColumnDef="lastVersionStatus">
+      <ng-container matColumnDef="status">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Last Version Status </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.lastVersionStatus}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
       </ng-container>
   
   
-      <ng-container matColumnDef="versions">
+      <ng-container matColumnDef="latestVersion">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Versions </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.versions}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.latestVersion}} </mat-cell>
       </ng-container>
   
    
 
-      <ng-container matColumnDef="lastUpdate">
+      <ng-container matColumnDef="lastModifiedDate">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Last Update </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.lastUpdate}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastModifiedDate | date}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="updatedBy">
+      <ng-container matColumnDef="lastModifiedBy">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Updated By </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.updatedBy}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastModifiedBy}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="releases">
+      <ng-container matColumnDef="releaseCount">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Releases </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.releases}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.releaseCount}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="lastRelease">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Last Release </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.lastRelease}} </mat-cell>
+      <ng-container matColumnDef="deployedReleaseId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Deployed Release </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.deployedReleaseId}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="actions">
