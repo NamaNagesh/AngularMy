@@ -97,25 +97,29 @@
 
 
       <ng-container matColumnDef="productName">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Data Product Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> <a href="#">{{element.productName}}</a> </mat-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Data Product Template Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+           <!-- <a href="/templateDetail">{{element.productName}}</a> -->
+
+           <a routerLink="/templateDetail" routerLinkActive="active" ariaCurrentWhenActive="page">{{element.productName}}</a>
+           </mat-cell>
       </ng-container>
   
      
       <ng-container matColumnDef="sproductTemplate">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Source Product Template </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.sproductTemplate}} </mat-cell>
       </ng-container>
   
 
       <ng-container matColumnDef="lastVersionStatus">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Last Version Status </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Last Update </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.lastVersionStatus}} </mat-cell>
       </ng-container>
   
   
       <ng-container matColumnDef="versions">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Versions </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Updated By </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.versions}} </mat-cell>
       </ng-container>
   
