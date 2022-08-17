@@ -18,7 +18,10 @@
 
       <ng-container matColumnDef="productName">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Data Product Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"><a href="#">{{element.productName}}</a>  </mat-cell>
+        <mat-cell *matCellDef="let element">
+          <!-- <a href="#">{{element.productName}}</a>  -->
+          <a routerLink="/dataDetails" routerLinkActive="active" ariaCurrentWhenActive="page">{{element.productName}}</a>
+        </mat-cell>
       </ng-container>
   
      

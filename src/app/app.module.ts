@@ -27,6 +27,7 @@ import {CdkMenuModule} from '@angular/cdk/menu';
 import {MatMenuModule} from '@angular/material/menu';
 import { ProductTemplateDetailsComponent } from './product-template-details/product-template-details.component';
 import { HomeComponent } from './home/home.component';
+import { ProductDataDetailsComponent } from './product-data-details/product-data-details.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { HomeComponent } from './home/home.component';
     AddProductDialogComponent,
     AboutDialogComponent,
     ProductTemplateDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    ProductDataDetailsComponent
   ],
   imports: [
     BrowserModule,
