@@ -29,6 +29,7 @@ import { ProductTemplateDetailsComponent } from './product-template-details/prod
 import { HomeComponent } from './home/home.component';
 import { ProductDataDetailsComponent } from './product-data-details/product-data-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddProductTemplateDialogComponent } from './add-product-template-dialog/add-product-template-dialog.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutDialogComponent,
     ProductTemplateDetailsComponent,
     HomeComponent,
-    ProductDataDetailsComponent
+    ProductDataDetailsComponent,
+    AddProductTemplateDialogComponent
   ],
   imports: [
     BrowserModule,

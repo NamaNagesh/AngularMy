@@ -5,6 +5,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import { AddProductDialogComponent } from '../add-product-dialog/add-product-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
+import { AddProductTemplateDialogComponent } from '../add-product-template-dialog/add-product-template-dialog.component';
 
 
 
@@ -73,7 +74,7 @@ export class ProductsTemplatesComponent implements OnInit {
   }
 
   openDialog(): void {
-    let dialogRef = this.dialog.open(AddProductDialogComponent, {
+    let dialogRef = this.dialog.open(AddProductTemplateDialogComponent, {
       width: '600px',
       data: {  }
     });
