@@ -25,7 +25,8 @@ export class ProductTemplateDetailsComponent implements OnInit {
     this.diagram.nodeTemplate= $(go.Node,"Auto",
     $(go.Shape,
       {figure:"RoundedRectangle",fill:"cyan",portId:"",fromLinkable:true,toLinkable:true},
-      new go.Binding("figure","shape")
+      new go.Binding("figure","shape"),
+      new go.Binding("fill","color")
      ),
      $(go.TextBlock,{margin:8},
        new go.Binding("text","key")
@@ -38,8 +39,8 @@ export class ProductTemplateDetailsComponent implements OnInit {
 
    this.diagram.model=$(go.GraphLinksModel,{
      nodeDataArray:[
-       {key:"Router",shape:"RoundedRectangle"},
-       {key:"Transformer",shape:"Ellipse"}
+       {key:"Router",shape:"RoundedRectangle",color:"lightgreen"},
+       {key:"Transformer",shape:"Ellipse",color:"cyan"}
      ],
      linkDataArray:
      [
