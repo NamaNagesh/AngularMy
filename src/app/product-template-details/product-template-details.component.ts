@@ -23,9 +23,9 @@ export class ProductTemplateDetailsComponent implements OnInit {
   ngAfterViewInit(){
     this.diagram = $(go.Diagram,'MyDia')
     this.diagram.nodeTemplate= $(go.Node,"Auto",
-    $(go.Shape,"RoundedRectangle",
-      {fill:"cyan",portId:"",fromLinkable:true,toLinkable:true},
-
+    $(go.Shape,
+      {figure:"RoundedRectangle",fill:"cyan",portId:"",fromLinkable:true,toLinkable:true},
+      new go.Binding("figure","shape")
      ),
      $(go.TextBlock,{margin:8},
        new go.Binding("text","key")
@@ -38,8 +38,8 @@ export class ProductTemplateDetailsComponent implements OnInit {
 
    this.diagram.model=$(go.GraphLinksModel,{
      nodeDataArray:[
-       {key:"Router"},
-       {key:"Transformer"}
+       {key:"Router",shape:"RoundedRectangle"},
+       {key:"Transformer",shape:"Ellipse"}
      ],
      linkDataArray:
      [
