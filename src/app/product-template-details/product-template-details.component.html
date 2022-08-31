@@ -1,15 +1,15 @@
 
 <app-header [templateId]="templateId"></app-header>
 <div class="contentMain">
-<div class="sideMenu">
-    <div class="search">
+<!-- <div class="sideMenu"> -->
+    <!-- <div class="search">
         <mat-form-field  class="formField" appearance="outline">
          <input matInput variant="out-lined" placeholder="Search" #input>
          <mat-icon matSuffix>search</mat-icon>
        </mat-form-field>
-       </div>
+       </div> -->
     <!-- <button mat-stroked-button>Basic</button> -->
-    <div class="heading">Patterns</div>
+    <!-- <div class="heading">Patterns</div>
     <div class="buttonGroup">
     <button class="shape" mat-stroked-button>Router</button>
     <button class="shape1" mat-stroked-button>Transformer</button>
@@ -23,9 +23,21 @@
    <button class="serviceShape2" mat-stroked-button>GME Service</button>
    <button class="serviceShape3" mat-stroked-button>Rule Editor Connector</button>
 
-  </div>
+  </div> -->
  
-</div>
-<div id="MyDia"></div>
+<!-- </div> -->
+<!-- <div id="myDiagramDiv"></div> -->
 
+
+
+<div style="width: 100%; display: flex; justify-content: space-between">
+  <div>
+    <h3 class="label">PATTERNS</h3>
+    <div id="myPaletteDiv" style="width: 205px; margin-right: 2px;height: 500px; background-color: whitesmoke; border: none;justify-content: space-between"></div>
+    <h3 class="label">SERVICES</h3>
+    <div id="myPaletteDiv1" style="width: 205px; margin-right: 2px;height: 500px; background-color: whitesmoke; border: none;justify-content: space-between"></div>
+    </div>
+
+  <div id="myDiagramDiv" style="flex-grow: 1;background-color: snow; height:1500px; border: solid 1px rgb(175, 168, 168)"></div>
+</div>
 </div>
