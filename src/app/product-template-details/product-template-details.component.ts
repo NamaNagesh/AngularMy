@@ -264,14 +264,14 @@ this.load();  // load an initial diagram from some JSON text
             { toArrow: "Standard", stroke: null })
         ),
       model: new go.GraphLinksModel([  // specify the contents of the Palette
-        { text: "Start", figure: "Ellipse", "size":"75 75", fill: "white" },
+       
         { text: "Router",figure:"RoundedRectangle",stroke:"lightpink" },
         { text: "Transformer", figure: "RoundedRectangle", stroke: "lightgreen" },
         { text: "Spliter", figure: "RoundedRectangle", stroke: "lightskyblue" },
         { text: "Spliter Aggregator", figure: "RoundedRectangle", stroke: "orange" },
         { text: "Recipient List", figure: "RoundedRectangle", stroke: "purple" },
         { text: "Recipient List Aggregator", figure: "RoundedRectangle", stroke: "brown" },
-        { text: "End", figure: "Ellipse", "size":"75 75", fill: "white" }
+       
       ], [
           // the Palette also has a disconnected Link, which the user can drag-and-drop
           // { points: new go.List(/*go.Point*/).addAll([new go.Point(0, 0), new go.Point(30, 0), new go.Point(30, 40), new go.Point(60, 40)]) }
