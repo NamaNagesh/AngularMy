@@ -217,7 +217,6 @@ this.myDiagram.linkTemplate =
       toShortLength: 4
     },
     new go.Binding("points").makeTwoWay(),
-    $(go.Shape),
     $(go.Shape,  // the link path shape
       { isPanelMain: true, strokeWidth: 2 }),
     $(go.Shape,  // the arrowhead
@@ -257,12 +256,12 @@ this.myDiagram.linkTemplate =
 
   this.myDiagram.model=$(go.GraphLinksModel,{
     nodeDataArray:[
-     { text: "Start", figure: "Ellipse", "size":"75 75", fill: "white" },
-     { text: "End", figure: "Ellipse", "size":"75 75", fill: "white" },
+     { text: "Start", figure: "RoundedRectangle", fill: "white" },
+     { text: "End", figure: "RoundedRectangle", fill: "white" },
     ],
     linkDataArray:
     [
-      {from:"Start",to:"End"}
+     
     ]
   })   
 this.load();  // load an initial diagram from some JSON text
