@@ -53,12 +53,12 @@ export class ProductTemplateDetailsComponent implements OnInit {
   this.myDiagram =
   $(go.Diagram, "myDiagramDiv",  // must name or refer to the DIV HTML element
     {
-      grid: $(go.Panel, "Grid"
-        // $(go.Shape, "LineH", { stroke: "lightgray", strokeWidth: 0.5 }),
-        // $(go.Shape, "LineH", { stroke: "gray", strokeWidth: 0.5, interval: 10 }),
-        // $(go.Shape, "LineV", { stroke: "lightgray", strokeWidth: 0.5 }),
-        // $(go.Shape, "LineV", { stroke: "gray", strokeWidth: 0.5, interval: 10 })
-      ),
+      // grid: $(go.Panel, "Grid"
+      //   // $(go.Shape, "LineH", { stroke: "lightgray", strokeWidth: 0.5 }),
+      //   // $(go.Shape, "LineH", { stroke: "gray", strokeWidth: 0.5, interval: 10 }),
+      //   // $(go.Shape, "LineV", { stroke: "lightgray", strokeWidth: 0.5 }),
+      //   // $(go.Shape, "LineV", { stroke: "gray", strokeWidth: 0.5, interval: 10 })
+      // ),
       "draggingTool.dragsLink": true,
       "draggingTool.isGridSnapEnabled": true,
       "linkingTool.isUnconnectedLinkValid": true,
@@ -89,6 +89,8 @@ this.myDiagram.addDiagramListener("Modified", (e:any) => {
     if (idx >= 0) document.title = document.title.slice(0, idx);
   }
 });
+
+
 
 // Define a function for creating a "port" that is normally transparent.
 // The "name" is used as the GraphObject.portId, the "spot" is used to control how links connect
@@ -183,6 +185,12 @@ this.myDiagram.nodeTemplate =
     }
   );
 
+  // this.myDiagram.linkTemplate=$(go.Link,{relinkableFrom:true,relinkableTo:true},
+  //         $(go.Shape),
+  //         $(go.Shape,{toArrow:"Standard"})
+  //       )
+  
+
 function showSmallPorts(node:any, show:any) {
   node.ports.each((port:any) => {
     if (port.portId !== "") {  // don't change the default port, which is the big shape
@@ -209,6 +217,7 @@ this.myDiagram.linkTemplate =
       toShortLength: 4
     },
     new go.Binding("points").makeTwoWay(),
+    $(go.Shape),
     $(go.Shape,  // the link path shape
       { isPanelMain: true, strokeWidth: 2 }),
     $(go.Shape,  // the arrowhead
@@ -230,6 +239,32 @@ this.myDiagram.linkTemplate =
     )
   );
 
+  // this.myDiagram.nodeTemplate= $(go.Node,"Auto",
+  //   $(go.Shape,
+  //     {figure:"RoundedRectangle",fill:"cyan",portId:"",fromLinkable:true,toLinkable:true},
+  //     new go.Binding("figure"),
+  //     new go.Binding("fill")
+  //    ),
+  //    $(go.TextBlock,{margin:8},
+  //      new go.Binding("text","key")
+  //     ),
+  //   )
+  // this.myDiagram.linkTemplate=$(go.Link,{relinkableFrom:true,relinkableTo:true},
+  //         $(go.Shape),
+  //         $(go.Shape,{toArrow:"Standard"})
+  //       )
+  
+
+  this.myDiagram.model=$(go.GraphLinksModel,{
+    nodeDataArray:[
+     { text: "Start", figure: "Ellipse", "size":"75 75", fill: "white" },
+     { text: "End", figure: "Ellipse", "size":"75 75", fill: "white" },
+    ],
+    linkDataArray:
+    [
+      {from:"Start",to:"End"}
+    ]
+  })   
 this.load();  // load an initial diagram from some JSON text
 
 // initialize the Palette that is on the left side of the page
