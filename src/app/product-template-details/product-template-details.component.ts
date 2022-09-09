@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import * as go from 'gojs';
+import { reduce } from 'rxjs';
 
 //const $= go.GraphObject.make;
 
@@ -157,6 +158,7 @@ this.myDiagram.nodeTemplate =
         new go.Binding("stroke"))).add(
       new go.TextBlock(
         {
+          stroke:"white",
           font: "bold 11pt Helvetica, Arial, sans-serif",
           margin: 8,
           maxSize: new go.Size(160, NaN),
@@ -200,7 +202,7 @@ this.myDiagram.linkTemplate =
         {
           textAlign: "center",
           font: "10pt helvetica, arial, sans-serif",
-          stroke: "#919191",
+          stroke: "white",
           margin: 2,
           minSize: new go.Size(10, NaN),
           editable: true
@@ -227,8 +229,8 @@ this.myDiagram.linkTemplate =
 
   this.myDiagram.model=new go.GraphLinksModel({
     nodeDataArray:[
-     { text: "Start", figure: "RoundedRectangle", fill: "white",loc:"0 0" },
-     { text: "End", figure: "RoundedRectangle", fill: "white",loc:"0 200" },
+     { text: "Start", figure: "RoundedRectangle", fill: "rgb(53, 53, 65)",loc:"0 0" },
+     { text: "End", figure: "RoundedRectangle", fill: "rgb(53, 53, 65)",loc:"0 200" },
     ],
     linkDataArray:
     [
@@ -240,6 +242,7 @@ this.load();  // load an initial diagram from some JSON text
 // initialize the Palette that is on the left side of the page
   new go.Palette("myPaletteDiv",  // must name or refer to the DIV HTML element
     {
+      
       maxSelectionCount: 1,
       nodeTemplateMap: this.myDiagram.nodeTemplateMap,  // share the templates used by myDiagram
       linkTemplate: // simplify the link template, just in this Palette
@@ -258,18 +261,18 @@ this.load();  // load an initial diagram from some JSON text
           }).add(
       
           new go.Shape(  // the link path shape
-            { isPanelMain: true, strokeWidth: 2 })).add(
+            { isPanelMain: true, strokeWidth: 3 })).add(
           new go.Shape( // the arrowhead
             { toArrow: "Standard", stroke: null })
         ),
       model: new go.GraphLinksModel([  // specify the contents of the Palette
        
-        { text: "Router",figure:"RoundedRectangle",stroke:"lightpink" },
-        { text: "Transformer", figure: "RoundedRectangle", stroke: "lightgreen" },
-        { text: "Spliter", figure: "RoundedRectangle", stroke: "lightskyblue" },
-        { text: "Spliter Aggregator", figure: "RoundedRectangle", stroke: "orange" },
-        { text: "Recipient List", figure: "RoundedRectangle", stroke: "purple" },
-        { text: "Recipient List Aggregator", figure: "RoundedRectangle", stroke: "brown" },
+        { text: "Router",figure:"RoundedRectangle",stroke:"lightpink",fill:"rgb(53, 53, 65)" },
+        { text: "Transformer", figure: "RoundedRectangle", stroke: "lightgreen",fill:"rgb(53, 53, 65)"  },
+        { text: "Spliter", figure: "RoundedRectangle", stroke: "lightskyblue",fill:"rgb(53, 53, 65)"  },
+        { text: "Spliter Aggregator", figure: "RoundedRectangle", stroke: "orange",fill:"rgb(53, 53, 65)"  },
+        { text: "Recipient List", figure: "RoundedRectangle", stroke: "purple",fill:"rgb(53, 53, 65)"  },
+        { text: "Recipient List Aggregator", figure: "RoundedRectangle", stroke: "brown",fill:"rgb(53, 53, 65)"  },
        
       ], [
           // the Palette also has a disconnected Link, which the user can drag-and-drop
@@ -307,9 +310,9 @@ this.load();  // load an initial diagram from some JSON text
         ),
       model: new go.GraphLinksModel([  // specify the contents of the Palette
       
-        { text: "DFG Services", figure: "RoundedRectangle", stroke: "darkblue" },
-        { text: "GME Service", figure: "RoundedRectangle", stroke: "navyblue" },
-        { text: "Rules Editor Connector", figure: "RoundedRectangle", stroke: "navyblue" },
+        { text: "DFG Services", figure: "RoundedRectangle", stroke: "darkblue", fill: "darkblue" },
+        { text: "GME Service", figure: "RoundedRectangle", stroke: "yellow" ,  fill: "yellow" },
+        { text: "Rules Editor Connector", figure: "RoundedRectangle", stroke: "green",  fill:"green"  },
        
       ], [
           // the Palette also has a disconnected Link, which the user can drag-and-drop
