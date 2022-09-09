@@ -136,7 +136,9 @@ new go.Shape({ fill: null, stroke: "deepskyblue", strokeWidth: 1.5, strokeDashAr
 
 
 this.myDiagram.nodeTemplate =
-  new go.Node( "Spot",{width:140,height:60}).bind( new go.Binding("location","loc",go.Point.parse)).add(
+  new go.Node( "Spot",{width:140,height:60, mouseEnter: (e, node) => showSmallPorts(node, true),  mouseLeave: (e, node) => showSmallPorts(node, false)})
+ 
+  .bind( new go.Binding("location","loc",go.Point.parse)).add(
      
     new go.Panel("Auto",
       { name: "PANEL" }).bind(
@@ -162,7 +164,10 @@ this.myDiagram.nodeTemplate =
           editable: true
         }).bind(
         new go.Binding("text").makeTwoWay())
-    )
+    ) .add( makePort("T", go.Spot.Top, false, true))
+    .add( makePort("L", go.Spot.Left, true, true))
+    .add( makePort("R", go.Spot.Right, true, true))
+    .add(  makePort("B", go.Spot.Bottom, true, false))
    
   );
 
