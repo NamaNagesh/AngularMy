@@ -112,11 +112,11 @@ function makePort(name:any, spot:any, output:any, input:any) {
     });
 }
 
-// var nodeSelectionAdornmentTemplate =
-//   new go.Adornment( "Auto",
-  
-   
-//   );
+var nodeSelectionAdornmentTemplate =
+new go.Adornment("Auto").add(
+new go.Shape({ fill: null, stroke: "deepskyblue", strokeWidth: 1.5, strokeDashArray: [4, 2] })
+).add(new go.Placeholder);
+
 
 // var nodeResizeAdornmentTemplate =
 //   $(go.Adornment, "Spot",
@@ -136,11 +136,12 @@ function makePort(name:any, spot:any, output:any, input:any) {
 
 
 this.myDiagram.nodeTemplate =
-  new go.Node( "Spot").add(
+  new go.Node( "Spot",{width:140,height:60}).bind( new go.Binding("location","loc",go.Point.parse)).add(
      
     new go.Panel("Auto",
       { name: "PANEL" }).bind(
-      new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify)).add(
+      new go.Binding("desiredSize", "size", go.Size.parse).makeTwoWay(go.Size.stringify))
+      .add(
       new go.Shape(  // default figure
         {
           geometry: go.Geometry.parse("M120 0 L80 80 0 50z"), 
@@ -162,13 +163,10 @@ this.myDiagram.nodeTemplate =
         }).bind(
         new go.Binding("text").makeTwoWay())
     )
+   
   );
 
-  // this.myDiagram.linkTemplate=$(go.Link,{relinkableFrom:true,relinkableTo:true},
-  //         $(go.Shape),
-  //         $(go.Shape,{toArrow:"Standard"})
-  //       )
-  
+
 
 function showSmallPorts(node:any, show:any) {
   node.ports.each((port:any) => {
@@ -184,7 +182,7 @@ var linkSelectionAdornmentTemplate =
   ).add(new  go.Shape({ isPanelMain: true, fill: null, stroke: "deepskyblue", strokeWidth: 0 })  )
 
 this.myDiagram.linkTemplate =
-  new go.Link( { selectable: true, selectionAdornmentTemplate: linkSelectionAdornmentTemplate , relinkableFrom: true, relinkableTo: true, reshapable: true }).bind( new go.Binding("points").makeTwoWay()).add(
+  new go.Link( { routing: go.Link.Orthogonal, corner: 3,selectable: true, selectionAdornmentTemplate: linkSelectionAdornmentTemplate , relinkableFrom: true, relinkableTo: true, reshapable: true }).bind( new go.Binding("points").makeTwoWay()).add(
     new go.Shape(  // the link path shape
       { isPanelMain: true, strokeWidth: 2 }),
     new go.Shape(  // the arrowhead
@@ -224,8 +222,8 @@ this.myDiagram.linkTemplate =
 
   this.myDiagram.model=new go.GraphLinksModel({
     nodeDataArray:[
-     { text: "Start", figure: "RoundedRectangle", fill: "white" },
-     { text: "End", figure: "RoundedRectangle", fill: "white" },
+     { text: "Start", figure: "RoundedRectangle", fill: "white",loc:"0 0" },
+     { text: "End", figure: "RoundedRectangle", fill: "white",loc:"0 200" },
     ],
     linkDataArray:
     [
