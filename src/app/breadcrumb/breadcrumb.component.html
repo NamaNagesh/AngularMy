@@ -6,7 +6,16 @@
  <span *ngIf="page=='templateDetail'" class="breadItem">Data product Template: {{templateId}}</span>
  <span *ngIf="page=='dataDetails'" class="breadItem">Data product : {{templateId}}</span>
 </div>
-
+<div *ngIf="!editMode && page=='templateDetail'" style="margin-left: 800px;margin-top: -30px;">
+  <button style="background-color:#ffff66;border-radius: 10px;" mat-raised-button>Read only mode</button>
+  <button  style="margin-left:'5px'" mat-raised-button color="primary" (click)="editClicked()">  <mat-icon>edit</mat-icon> Edit </button>
+  </div>
+  
+  <div *ngIf="editMode && page=='templateDetail'" style="margin-left: 800px;margin-top: -30px;">
+    <button style="background-color:#72d67f;border-radius: 10px;" mat-raised-button>Edit mode</button>
+    <button  style="margin-left:'5px'" mat-raised-button color="primary" (click)="editClicked()">  Save Template </button>
+     <button style="margin-left:'3px'" mat-button> <mat-icon>close</mat-icon>Close</button>  
+  </div>
 
 <div class="addButton">
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">

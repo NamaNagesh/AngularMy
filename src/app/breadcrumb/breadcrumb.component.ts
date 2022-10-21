@@ -9,6 +9,7 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent implements OnInit {
+  editMode:boolean=false;
 
   constructor(public dialog: MatDialog) {}
 
@@ -33,4 +34,9 @@ export class BreadcrumbComponent implements OnInit {
   
 
 }
+editClicked():void{
+ 
+   this.editMode=!this.editMode;
+}
+
 }
