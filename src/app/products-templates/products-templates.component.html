@@ -67,12 +67,13 @@
     </mat-card-content>
     
   </mat-card> -->
-
+<app-toast-my *ngIf="showToast"></app-toast-my>
+ 
   <div class="addButton">
     <button mat-raised-button color="primary" (click)="openDialog()">Create Data Product Template</button>
     </div>
   <div style="display:inline-flex">
-    
+    <!-- <p-toaster></p-toaster> -->
   <div class="table-container mat-elevation-z8">
     <div class="search">
       <mat-form-field  class="formField" appearance="outline">

@@ -2,7 +2,7 @@
   "name": "my-angular",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng g c about-dialog",
+    "ng": "ng g c toastMy",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -20,9 +20,11 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
-    "web-animations-js": "2.3.2",
+    "primeicons": "^6.0.1",
+    "primeng": "^14.1.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "web-animations-js": "2.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

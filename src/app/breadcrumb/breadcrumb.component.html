@@ -2,6 +2,16 @@
 <a class="breadItem" href="">Data Product Studio</a>
 <span class="breadItem">/</span>
 <span class="breadItem">Business Unit: My BU</span>
+<div *ngIf="!editMode" style="display: inline-flex;margin-left: 300px;">
+<button style="background-color:#ffff66" mat-raised-button>Read only mode</button>
+<button  style="margin-left:'5px'" mat-raised-button color="primary" (click)="editClicked()">  <mat-icon>edit</mat-icon> Edit </button>
+</div>
+
+<div *ngIf="editMode" style="display: inline-flex;margin-left: 300px;">
+  <button style="background-color:#72d67f" mat-raised-button>Edit mode</button>
+  <button  style="margin-left:'5px'" mat-raised-button color="primary" (click)="editClicked()">  Save Template </button>
+   <button style="margin-left:'3px'" mat-button> <mat-icon>close</mat-icon>Close</button>  
+</div>
 <div class="addButton">
     <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>help_outline</mat-icon>
@@ -14,5 +24,6 @@
        
       </mat-menu>
 <!-- <button mat-raised-button color="primary" (click)="openDialog()"> About</button> -->
+<br><br>
 </div>
 </div>

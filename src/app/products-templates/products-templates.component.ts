@@ -4,7 +4,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import { AddProductDialogComponent } from '../add-product-dialog/add-product-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
-
+import { MessageService } from 'primeng/api';
 
 
 @Component({
@@ -15,13 +15,15 @@ import {MatDialog} from '@angular/material/dialog';
 export class ProductsTemplatesComponent implements OnInit {
 
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,private messageService:MessageService) {}
 
   @ViewChild('matSort') sort:MatSort= new MatSort();
   @ViewChild('paginator') paginator!: MatPaginator;
 
   @ViewChild('matSort1') sort1:MatSort= new MatSort();
   @ViewChild('paginator1') paginator1!: MatPaginator;
+
+  showToast:boolean=false;
 
   displayedColumns = ['productName', 'sproductTemplate', 'lastVersionStatus', 'versions','actions'];
   ELEMENT_DATA : ElementObj[] = [
@@ -42,7 +44,8 @@ export class ProductsTemplatesComponent implements OnInit {
   }
 
   openDialog(): void {
-    let dialogRef = this.dialog.open(AddProductDialogComponent, {
+    this.showToast=true;
+       let dialogRef = this.dialog.open(AddProductDialogComponent, {
       width: '600px',
       data: {  }
     });

@@ -11,6 +11,7 @@ import {MatDialog} from '@angular/material/dialog';
 export class BreadcrumbComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {}
+  editMode:boolean=false;
 
   ngOnInit(): void {
   }
@@ -23,4 +24,11 @@ export class BreadcrumbComponent implements OnInit {
   
 
 }
+
+editClicked():void{
+  console.log("ng")
+   this.editMode=!this.editMode;
+}
+
+
 }

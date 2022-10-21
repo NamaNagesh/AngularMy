@@ -25,6 +25,9 @@ import { AboutDialogComponent } from './about-dialog/about-dialog.component';
 import {MatIconModule} from '@angular/material/icon';
 import {CdkMenuModule} from '@angular/cdk/menu';
 import {MatMenuModule} from '@angular/material/menu';
+import {  MessageService } from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
+import { ToastMyComponent } from './toast-my/toast-my.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import {MatMenuModule} from '@angular/material/menu';
     HeaderComponent,
     BreadcrumbComponent,
     AddProductDialogComponent,
-    AboutDialogComponent
+    AboutDialogComponent,
+    ToastMyComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +57,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDialogModule,
     MatIconModule,
     CdkMenuModule,
-    MatMenuModule
+    MatMenuModule,ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
