@@ -14,7 +14,7 @@
   <div *ngIf="editMode && page=='templateDetail'" style="margin-left: 800px;margin-top: -30px;">
     <button style="background-color:#72d67f;border-radius: 10px;" mat-raised-button>Edit mode</button>
     <button  style="margin-left:'5px'" mat-raised-button color="primary" (click)="editClicked()">  Save Template </button>
-     <button style="margin-left:'3px'" mat-button> <mat-icon>close</mat-icon>Close</button>  
+     <button style="margin-left:'3px'" mat-button (click)="openDialogConfirm()"> <mat-icon>close</mat-icon>Close</button>  
   </div>
 
 <div class="addButton">
